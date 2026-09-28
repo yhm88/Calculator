@@ -41,7 +41,7 @@ function operate(operator, num1, num2) {
   }
 
   return Math.round(res * 10000) / 10000;
-}
+};
 
 const display = document.querySelector(".display");
 const btns = document.querySelectorAll(".num, .num0");
@@ -57,8 +57,8 @@ btns.forEach(btn => {
       secondNum += clickNum;
       display.textContent = secondNum;
     }
-  })
-})
+  });
+});
 
 const operators = document.querySelectorAll(".operator")
 operators.forEach(oprBtn => {
@@ -74,8 +74,8 @@ operators.forEach(oprBtn => {
     }
 
     operator = clickOpr;
-  })
-})
+  });
+});
 
 const equal = document.querySelector(".equal");
 equal.addEventListener('click', (e) => {
@@ -88,7 +88,7 @@ equal.addEventListener('click', (e) => {
   firstNum = "";
   secondNum = "";
   operator = "";
-})
+});
 
 const allClear = document.querySelector(".all-clear");
 allClear.addEventListener('click', () => {
@@ -97,4 +97,19 @@ allClear.addEventListener('click', () => {
   firstNum = "";
   secondNum = "";
   operator = "";
-})
+});
+
+const decimal = document.querySelector(".decimal");
+decimal.addEventListener('click', () => {
+  if (operator === "") {
+    if (firstNum.includes(".")) return;
+
+    firstNum += "."
+    display.textContent = firstNum;
+  } else {
+    if (secondNum.includes(".")) return;
+
+    secondNum += ".";
+    display.textContent = secondNum;
+  }
+});
