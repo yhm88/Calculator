@@ -70,6 +70,9 @@ operators.forEach(oprBtn => {
 
 const equal = document.querySelector(".equal");
 equal.addEventListener('click', (e) => {
+  if (operator === "" || firstNum === "" || secondNum === "") {
+    return;
+  }
   const result = operate(operator, firstNum, secondNum);
   display.textContent = result ;
 
