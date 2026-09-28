@@ -55,6 +55,14 @@ operators.forEach(oprBtn => {
   oprBtn.addEventListener('click', (e) => {
     const clickOpr = e.target.textContent;
 
+    if (operator !== "" && firstNum !== "" && secondNum !== "") {
+      const interOprResult = operate(operator, firstNum, secondNum);
+      display.textContent = interOprResult;
+
+      firstNum = interOprResult.toString();
+      secondNum = "";
+    }
+
     operator = clickOpr;
   })
 })
