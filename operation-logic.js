@@ -56,6 +56,24 @@ operators.forEach(oprBtn => {
     const clickOpr = e.target.textContent;
 
     operator = clickOpr;
-    console.log("当前存在后台的运算符：", operator);
   })
+})
+
+const equal = document.querySelector(".equal");
+equal.addEventListener('click', (e) => {
+  const result = operate(operator, firstNum, secondNum);
+  display.textContent = result;
+
+  firstNum = "";
+  secondNum = "";
+  operator = "";
+})
+
+const allClear = document.querySelector(".all-clear");
+allClear.addEventListener('click', () => {
+  display.textContent = "0"
+
+  firstNum = "";
+  secondNum = "";
+  operator = "";
 })
