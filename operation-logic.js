@@ -133,4 +133,19 @@ backspace.addEventListener('click', () => {
       display.textContent = secondNum;
     }
   }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.querySelector(".equal").click();
+  }
+
+  if (e.key === "Backspace") {
+    document.querySelector(".backspace").click();
+  }
+
+  if (e.key === "Escape") {
+    document.querySelector(".all-clear").click();
+  }
 })
