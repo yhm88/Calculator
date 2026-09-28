@@ -21,16 +21,17 @@ let operator = "";
 function operate(operator, num1, num2) {
   num1 = Number(num1);
   num2 = Number(num2);
-
+  let res;
   if (operator === '+') {
-    return add(num1, num2);
+    res = add(num1, num2);
   } else if (operator === '-') {
-    return subtract(num1, num2);
+    res =subtract(num1, num2);
   } else if (operator === '*') {
-    return multiply(num1, num2);
+    res =multiply(num1, num2);
   } else if (operator === '/') {
-    return divide(num1, num2);
+    res =divide(num1, num2);
   }
+  return Math.round(res * 10000) / 10000;
 }
 
 const display = document.querySelector(".display");
@@ -70,7 +71,7 @@ operators.forEach(oprBtn => {
 const equal = document.querySelector(".equal");
 equal.addEventListener('click', (e) => {
   const result = operate(operator, firstNum, secondNum);
-  display.textContent = result;
+  display.textContent = result ;
 
   firstNum = "";
   secondNum = "";
