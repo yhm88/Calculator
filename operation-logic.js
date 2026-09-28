@@ -113,3 +113,24 @@ decimal.addEventListener('click', () => {
     display.textContent = secondNum;
   }
 });
+
+const backspace = document.querySelector(".backspace");
+backspace.addEventListener('click', () => {
+  if (operator === "") {
+    firstNum = firstNum.slice(0, -1);
+
+    if (firstNum === "") {
+      display.textContent = "0";
+    } else {
+      display.textContent = firstNum;
+    }
+  } else {
+    secondNum = secondNum.slice(0, -1);
+
+    if (secondNum === "") {
+      display.textContent = "0";
+    } else {
+      display.textContent = secondNum;
+    }
+  }
+})
