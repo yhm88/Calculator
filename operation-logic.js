@@ -11,7 +11,11 @@ const multiply = (a, b) => {
 };
 
 const divide = (a, b) => {
-  return a / b;
+  if (b === 0) {
+    return "ERROR"
+  } else {
+    return a / b;
+  }
 };
 
 let firstNum = "";
@@ -25,12 +29,17 @@ function operate(operator, num1, num2) {
   if (operator === '+') {
     res = add(num1, num2);
   } else if (operator === '-') {
-    res =subtract(num1, num2);
+    res = subtract(num1, num2);
   } else if (operator === '*') {
-    res =multiply(num1, num2);
+    res = multiply(num1, num2);
   } else if (operator === '/') {
-    res =divide(num1, num2);
+    res = divide(num1, num2);
   }
+
+  if (res === "ERROR") {
+    return res;
+  }
+
   return Math.round(res * 10000) / 10000;
 }
 
@@ -74,7 +83,7 @@ equal.addEventListener('click', (e) => {
     return;
   }
   const result = operate(operator, firstNum, secondNum);
-  display.textContent = result ;
+  display.textContent = result;
 
   firstNum = "";
   secondNum = "";
