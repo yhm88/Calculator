@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  width: 500px;
+  height: 650px;
+  background-color: aquamarine;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid;
+}
+
+.display {
+  background-color: lightgoldenrodyellow;
+  width: 100%;
+  height: 20%;
+}
+
+#operand-container {
+  background-color: lightblue;
+  height: 520px;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+#operand-container>div {
+  width: 25%;
+  height: 20%;
+  border: 0.5px solid;
+}
+
+.num {
+  background-color: lightgray;
+}
+
+#operand-container .num0 {
+  width: 50%;
+  background-color: lightgray;
+}
+
+.decimal {
+  background-color: lightgray;
+}
+
+.operator {
+  background-color: lightgreen;
+}
