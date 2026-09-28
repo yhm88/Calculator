@@ -33,3 +33,29 @@ function operate(operator, num1, num2) {
   }
 }
 
+const display = document.querySelector(".display");
+const btns = document.querySelectorAll(".num, .num0");
+
+btns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const clickNum = e.target.textContent;
+
+    if (operator === "") {
+      firstNum += clickNum;
+      display.textContent = firstNum;
+    } else {
+      secondNum += clickNum;
+      display.textContent = secondNum;
+    }
+  })
+})
+
+const operators = document.querySelectorAll(".operator")
+operators.forEach(oprBtn => {
+  oprBtn.addEventListener('click', (e) => {
+    const clickOpr = e.target.textContent;
+
+    operator = clickOpr;
+    console.log("当前存在后台的运算符：", operator);
+  })
+})

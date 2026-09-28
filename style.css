@@ -53,6 +53,11 @@ body {
   background-color: lightgray;
 }
 
+
 .operator {
+  background-color: lightgreen;
+}
+
+.equal {
   background-color: lightgreen;
 }
