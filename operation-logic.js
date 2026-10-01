@@ -136,6 +136,16 @@ backspace.addEventListener('click', () => {
 });
 
 window.addEventListener('keydown', (e) => {
+  const keysToPrevent = [
+    'Enter', 'Backspace', 'Escape', '=',
+    '+', '-', '*', '/', '.',
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+  ];
+
+  if (keysToPrevent.includes(e.key)) {
+    e.preventDefault();
+  }
+
   if (e.key === "Enter") {
     e.preventDefault();
     document.querySelector(".equal").click();
@@ -148,4 +158,32 @@ window.addEventListener('keydown', (e) => {
   if (e.key === "Escape") {
     document.querySelector(".all-clear").click();
   }
-})
+
+  if (e.key === ".") {
+    document.querySelector(".decimal").click();
+  }
+
+  if (e.key >= '0' && e.key <= '9') {
+    btns.forEach(btn => {
+      if (btn.textContent.trim() === e.key) {
+        btn.click();
+      }
+    });
+  }
+
+  if (e.key === '+') {
+    document.querySelector('.plus').click();
+  }
+
+  if (e.key === '-') {
+    document.querySelector('.subtract').click();
+  }
+
+  if (e.key === '*') {
+    document.querySelector('.multiplt').click();
+  }
+
+  if (e.key === '/') {
+    document.querySelector('.divide').click();
+  }
+});
